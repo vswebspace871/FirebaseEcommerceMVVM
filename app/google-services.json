@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "190601890301",
+    "project_id": "fir-ecommercemvvm",
+    "storage_bucket": "fir-ecommercemvvm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190601890301:android:7a89f087662a13740a7194",
+        "android_client_info": {
+          "package_name": "com.example.firebaseecommercemvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190601890301-nlk29bnho215g1uvgmorn8n29fiddjaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6kj_0SVm54nA9Imoc1uuh2-U8CR6K7Lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190601890301-nlk29bnho215g1uvgmorn8n29fiddjaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
