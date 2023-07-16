@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import com.example.firebaseecommercemvvm.ShoppingActivity
+import com.example.firebaseecommercemvvm.activities.ShoppingActivity
 import com.example.firebaseecommercemvvm.databinding.FragmentLoginBinding
 import com.example.firebaseecommercemvvm.dialog.setupBottomSheetDialog
 import com.example.firebaseecommercemvvm.util.Resource

@@ -32,8 +32,8 @@ class RegisterViewModel @Inject constructor(
                 _register.emit(Resource.Loading())
             }
             firebaseAuth.createUserWithEmailAndPassword(user.email, password)
-                .addOnSuccessListener {
-                    it.user?.let {
+                .addOnSuccessListener {authResult->
+                    authResult.user?.let {
                         saveUserInfo(it.uid, user)
                     }
                 }.addOnFailureListener {
