@@ -15,7 +15,7 @@ class LoginRegisterActivity : AppCompatActivity() {
 
 //    private lateinit var navHostFragment: NavHostFragment
 
-    private lateinit var navHostFragment: NavHostFragment
+    //private lateinit var navHostFragment: NavHostFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +25,10 @@ class LoginRegisterActivity : AppCompatActivity() {
 
 //        navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
-        navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        /*navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment*/
 
-        if (Build.VERSION.SDK_INT >= 33) {
+        /*if (Build.VERSION.SDK_INT >= 33) {
             onBackInvokedDispatcher.registerOnBackInvokedCallback(
                 OnBackInvokedDispatcher.PRIORITY_DEFAULT
             ) {
@@ -37,7 +37,7 @@ class LoginRegisterActivity : AppCompatActivity() {
         } else {
 
             onBackPressedDispatcher.addCallback(
-                this /* lifecycle owner */,
+                this *//* lifecycle owner *//*,
                 object : OnBackPressedCallback(true) {
                     override fun handleOnBackPressed() {
                         // Back is pressed... Finishing the activity
@@ -45,7 +45,7 @@ class LoginRegisterActivity : AppCompatActivity() {
                     }
                 })
 
-        }
+        }*/
         //handling back button pressed
         /*if(Build.VERSION.SDK_INT >= 33) {
             onBackInvokedDispatcher.registerOnBackInvokedCallback(
@@ -67,7 +67,7 @@ class LoginRegisterActivity : AppCompatActivity() {
 
     }
 
-    private fun handleBackButtonPressed() {
+    /*private fun handleBackButtonPressed() {
         val currentFragment = findNavController(R.id.fragmentContainerView).currentDestination?.id
 
         currentFragment?.let {currentFragmentID ->
@@ -78,7 +78,7 @@ class LoginRegisterActivity : AppCompatActivity() {
             }
         }
 
-    }
+    }*/
 }
 
 /*  private fun handleBackButtonPressed() {
