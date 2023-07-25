@@ -133,7 +133,7 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
                 }
             }
         }
-
+        /** Scroll listener, to detect when we reach bottom of scroll view*/
         binding.nestedScrollMainCategory.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, _, scrollY, _, _ ->
             if (v.getChildAt(0).bottom <= v.height + scrollY) {
                 viewModel.fetchBestProducts()

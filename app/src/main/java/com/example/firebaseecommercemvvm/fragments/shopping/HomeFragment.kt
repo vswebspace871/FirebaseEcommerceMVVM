@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.firebaseecommercemvvm.R
 import com.example.firebaseecommercemvvm.adapters.HomeViewpagerAdapter
 import com.example.firebaseecommercemvvm.databinding.FragmentHomeBinding
-import com.example.firebaseecommercemvvm.fragments.categories.MainCategoryFragment
+import com.example.firebaseecommercemvvm.fragments.categories.*
 import com.example.kelineyt.fragments.categories.*
 import com.google.android.material.tabs.TabLayoutMediator
 

@@ -1,14 +1,14 @@
-package com.example.kelineyt.fragments.categories
+package com.example.firebaseecommercemvvm.fragments.categories
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-/*import com.example.kelineyt.data.Category
-import com.example.kelineyt.util.Resource
-import com.example.kelineyt.viewmodel.CategoryViewModel
-import com.example.kelineyt.viewmodel.factory.BaseCategoryViewModelFactoryFactory*/
+import com.example.firebaseecommercemvvm.data.Category
+import com.example.firebaseecommercemvvm.util.Resource
+import com.example.firebaseecommercemvvm.viewmodel.CategoryViewModel
+import com.example.firebaseecommercemvvm.viewmodel.factory.BaseCategoryViewModelFactoryFactory
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class TableFragment: BaseCategoryFragment() {/*
+class TableFragment: BaseCategoryFragment() {
 
     @Inject
     lateinit var firestore: FirebaseFirestore
@@ -75,5 +75,5 @@ class TableFragment: BaseCategoryFragment() {/*
 
     override fun onOfferPagingRequest() {
 
-    }*/
+    }
 }

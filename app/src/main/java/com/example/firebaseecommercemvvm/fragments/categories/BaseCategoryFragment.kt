@@ -1,4 +1,4 @@
-package com.example.kelineyt.fragments.categories
+package com.example.firebaseecommercemvvm.fragments.categories
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebaseecommercemvvm.R
-/*import com.example.kelineyt.R
-import com.example.kelineyt.adapters.BestProductsAdapter
-import com.example.kelineyt.databinding.FragmentBaseCategoryBinding
-import com.example.kelineyt.util.showBottomNavigationView*/
+import com.example.firebaseecommercemvvm.adapters.BestProductsAdapter
+import com.example.firebaseecommercemvvm.databinding.FragmentBaseCategoryBinding
+//import com.example.firebaseecommercemvvm.util.showBottomNavigationView
 
-open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {/*
+open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
     private lateinit var binding: FragmentBaseCategoryBinding
     protected val offerAdapter: BestProductsAdapter by lazy { BestProductsAdapter() }
     protected val  bestProductsAdapter: BestProductsAdapter by lazy { BestProductsAdapter() }
@@ -36,7 +35,7 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {/*
         setupOfferRv()
         setupBestProductsRv()
 
-        bestProductsAdapter.onClick = {
+       /* bestProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
@@ -45,7 +44,7 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {/*
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
-
+*/
         binding.rvOfferProducts.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -103,7 +102,7 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {/*
         }
     }
 
-    override fun onResume() {
+  /*  override fun onResume() {
         super.onResume()
         showBottomNavigationView()
     }*/
