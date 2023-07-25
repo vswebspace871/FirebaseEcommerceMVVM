@@ -14,13 +14,14 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.firebaseecommercemvvm.R
 import com.example.firebaseecommercemvvm.activities.ShoppingActivity
-//import com.example.firebaseecommercemvvm.adapters.ColorsAdapter
-//import com.example.firebaseecommercemvvm.adapters.SizesAdapter
-//import com.example.firebaseecommercemvvm.adapters.ViewPager2Images
+import com.example.firebaseecommercemvvm.adapters.ColorsAdapter
+import com.example.firebaseecommercemvvm.adapters.SizesAdapter
+import com.example.firebaseecommercemvvm.adapters.ViewPager2Images
+import com.example.firebaseecommercemvvm.databinding.FragmentProductDetailsBinding
 //import com.example.firebaseecommercemvvm.data.CartProduct
-//import com.example.firebaseecommercemvvm.data.Product
-//import com.example.firebaseecommercemvvm.databinding.FragmentProductDetailsBinding
-//import com.example.firebaseecommercemvvm.util.Resource
+import com.example.firebaseecommercemvvm.data.Product
+import com.example.firebaseecommercemvvm.util.Resource
+import com.example.firebaseecommercemvvm.util.hideBottomNavigationView
 //import com.example.firebaseecommercemvvm.util.hideBottomNavigationView
 //import com.example.firebaseecommercemvvm.viewmodel.DetailsViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,46 +30,46 @@ import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
 class ProductDetailsFragment : Fragment() {
-//    private val args by navArgs<ProductDetailsFragmentArgs>()
-//    private lateinit var binding: FragmentProductDetailsBinding
-//    private val viewPagerAdapter by lazy { ViewPager2Images() }
-//    private val sizesAdapter by lazy { SizesAdapter() }
-//    private val colorsAdapter by lazy { ColorsAdapter() }
-//    private var selectedColor: Int? = null
-//    private var selectedSize: String? = null
-//    private val viewModel by viewModels<DetailsViewModel>()
+    private val args by navArgs<ProductDetailsFragmentArgs>()
+    private lateinit var binding: FragmentProductDetailsBinding
+    private val viewPagerAdapter by lazy { ViewPager2Images() }
+    private val sizesAdapter by lazy { SizesAdapter() }
+    private val colorsAdapter by lazy { ColorsAdapter() }
+    private var selectedColor: Int? = null
+    private var selectedSize: String? = null
+    //private val viewModel by viewModels<DetailsViewModel>()
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        hideBottomNavigationView()
-//        binding = FragmentProductDetailsBinding.inflate(inflater)
-//        return binding.root
-//    }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        hideBottomNavigationView()
+        binding = FragmentProductDetailsBinding.inflate(inflater)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val product = args.product
-//
-//        setupSizesRv()
-//        setupColorsRv()
-//        setupViewpager()
+        val product = args.product
 
-//        binding.imageClose.setOnClickListener {
-//            findNavController().navigateUp()
-//        }
-//
-//        sizesAdapter.onItemClick = {
-//            selectedSize = it
-//        }
-//
-//        colorsAdapter.onItemClick = {
-//            selectedColor = it
-//        }
-//
+        setupSizesRv()
+        setupColorsRv()
+        setupViewpager()
+
+        binding.imageClose.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        sizesAdapter.onItemClick = {
+            selectedSize = it
+        }
+
+        colorsAdapter.onItemClick = {
+            selectedColor = it
+        }
+
 //        binding.buttonAddToCart.setOnClickListener {
 //            viewModel.addUpdateProductInCart(CartProduct(product, 1, selectedColor, selectedSize))
 //        }
@@ -93,43 +94,42 @@ class ProductDetailsFragment : Fragment() {
 //                }
 //            }
 //        }
-//
-//        binding.apply {
-//            tvProductName.text = product.name
-//            tvProductPrice.text = "$ ${product.price}"
-//            tvProductDescription.text = product.description
-//
-//            if (product.colors.isNullOrEmpty())
-//                tvProductColors.visibility = View.INVISIBLE
-//            if (product.sizes.isNullOrEmpty())
-//                tvProductSize.visibility = View.INVISIBLE
-//        }
-//
-//        viewPagerAdapter.differ.submitList(product.images)
-//        product.colors?.let { colorsAdapter.differ.submitList(it) }
-//        product.sizes?.let { sizesAdapter.differ.submitList(it) }
-//    }
 
-//    private fun setupViewpager() {
-//        binding.apply {
-//            viewPagerProductImages.adapter = viewPagerAdapter
-//        }
-//    }
-//
-//    private fun setupColorsRv() {
-//        binding.rvColors.apply {
-//            adapter = colorsAdapter
-//            layoutManager =
-//                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        }
-//    }
-//
-//    private fun setupSizesRv() {
-//        binding.rvSizes.apply {
-//            adapter = sizesAdapter
-//            layoutManager =
-//                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        }
-//    }
+        binding.apply {
+            tvProductName.text = product.name
+            tvProductPrice.text = "$ ${product.price}"
+            tvProductDescription.text = product.description
+
+            if (product.colors.isNullOrEmpty())
+                tvProductColors.visibility = View.INVISIBLE
+            if (product.sizes.isNullOrEmpty())
+                tvProductSize.visibility = View.INVISIBLE
+        }
+
+        viewPagerAdapter.differ.submitList(product.images)
+        product.colors?.let { colorsAdapter.differ.submitList(it) }
+        product.sizes?.let { sizesAdapter.differ.submitList(it) }
     }
-}
+
+        private fun setupViewpager() {
+            binding.apply {
+                viewPagerProductImages.adapter = viewPagerAdapter
+            }
+        }
+
+        private fun setupColorsRv() {
+            binding.rvColors.apply {
+                adapter = colorsAdapter
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            }
+        }
+
+        private fun setupSizesRv() {
+            binding.rvSizes.apply {
+                adapter = sizesAdapter
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            }
+        }
+    }

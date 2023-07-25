@@ -23,6 +23,7 @@ import com.example.firebaseecommercemvvm.adapters.SpecialProductsAdapter
 import com.example.firebaseecommercemvvm.databinding.FragmentHomeBinding
 import com.example.firebaseecommercemvvm.databinding.FragmentMainCategoryBinding
 import com.example.firebaseecommercemvvm.util.Resource
+import com.example.firebaseecommercemvvm.util.showBottomNavigationView
 //import com.example.firebaseecommercemvvm.util.showBottomNavigationView
 import com.example.firebaseecommercemvvm.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +56,7 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         setupBestDealsRv()
         setupBestProducts()
 
-      /*  specialProductsAdapter.onClick = {
+        specialProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
           findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
@@ -63,12 +64,12 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         bestDealsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
-        }*/
+        }
 
-       /* bestProductsAdapter.onClick = {
+        bestProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
-        }*/
+        }
 
 
         lifecycleScope.launchWhenStarted {
@@ -179,8 +180,7 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
 
     override fun onResume() {
         super.onResume()
-
-        //showBottomNavigationView()
+        showBottomNavigationView()
     }
 
 }

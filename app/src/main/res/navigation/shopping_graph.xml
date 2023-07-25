@@ -10,30 +10,30 @@
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
-       <!-- <action
+        <action
             android:id="@+id/action_homeFragment_to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />-->
+            app:destination="@id/productDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
-        <!--<action
+        <action
             android:id="@+id/action_searchFragment_to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />-->
+            app:destination="@id/productDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart">
-        <!--<action
+        <action
             android:id="@+id/action_cartFragment_to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />-->
+            app:destination="@id/productDetailsFragment" />
 
  />
-        <!--<action
+  <!--      <action
             android:id="@+id/action_cartFragment_to_billingFragment2"
             app:destination="@id/billingFragment" />-->
     </fragment>
@@ -42,7 +42,7 @@
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
-        <!--<action
+<!--        <action
             android:id="@+id/action_profileFragment_to_userAccountFragment"
             app:destination="@id/userAccountFragment" />
         <action
@@ -52,7 +52,7 @@
             android:id="@+id/action_profileFragment_to_billingFragment"
             app:destination="@id/billingFragment" />-->
     </fragment>
- <!--   <fragment
+    <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.ProductDetailsFragment"
         android:label="ProductDetailsFragment"
@@ -61,7 +61,7 @@
             android:name="product"
             app:argType="com.example.firebaseecommercemvvm.data.Product" />
     </fragment>
-    <fragment
+   <!-- <fragment
         android:id="@+id/addressFragment"
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.AddressFragment"
         android:label="AddressFragment"
@@ -71,8 +71,8 @@
             app:argType="com.example.firebaseecommercemvvm.data.Address"
             app:nullable="true"
             android:defaultValue="@null" />
-    </fragment>
-    <fragment
+    </fragment>-->
+   <!-- <fragment
         android:id="@+id/billingFragment"
         android:name="com.example.firebaseecommercemvvm.fragments.shopping.BillingFragment"
         android:label="BillingFragment"
@@ -89,8 +89,8 @@
         <argument
             android:name="payment"
             app:argType="boolean" />
-    </fragment>
-    <fragment
+    </fragment>-->
+    <!--<fragment
         android:id="@+id/userAccountFragment"
         android:name="com.example.firebaseecommercemvvm.fragments.settings.UserAccountFragment"
         android:label="UserAccountFragment" />
