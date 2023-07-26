@@ -17,12 +17,14 @@ import com.example.firebaseecommercemvvm.activities.ShoppingActivity
 import com.example.firebaseecommercemvvm.adapters.ColorsAdapter
 import com.example.firebaseecommercemvvm.adapters.SizesAdapter
 import com.example.firebaseecommercemvvm.adapters.ViewPager2Images
+import com.example.firebaseecommercemvvm.data.CartProduct
 import com.example.firebaseecommercemvvm.databinding.FragmentProductDetailsBinding
 //import com.example.firebaseecommercemvvm.data.CartProduct
 import com.example.firebaseecommercemvvm.data.Product
 import com.example.firebaseecommercemvvm.util.Resource
 import com.example.firebaseecommercemvvm.util.hideBottomNavigationView
-//import com.example.firebaseecommercemvvm.util.hideBottomNavigationView
+import com.example.firebaseecommercemvvm.util.hideBottomNavigationView
+import com.example.firebaseecommercemvvm.viewmodel.DetailsViewModel
 //import com.example.firebaseecommercemvvm.viewmodel.DetailsViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,7 +39,7 @@ class ProductDetailsFragment : Fragment() {
     private val colorsAdapter by lazy { ColorsAdapter() }
     private var selectedColor: Int? = null
     private var selectedSize: String? = null
-    //private val viewModel by viewModels<DetailsViewModel>()
+    private val viewModel by viewModels<DetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,30 +72,30 @@ class ProductDetailsFragment : Fragment() {
             selectedColor = it
         }
 
-//        binding.buttonAddToCart.setOnClickListener {
-//            viewModel.addUpdateProductInCart(CartProduct(product, 1, selectedColor, selectedSize))
-//        }
+        binding.buttonAddToCart.setOnClickListener {
+            viewModel.addUpdateProductInCart(CartProduct(product, 1, selectedColor, selectedSize))
+        }
 
-//        lifecycleScope.launchWhenStarted {
-//            viewModel.addToCart.collectLatest {
-//                when (it) {
-//                    is Resource.Loading -> {
-//                        binding.buttonAddToCart.startAnimation()
-//                    }
-//
-//                    is Resource.Success -> {
-//                        binding.buttonAddToCart.revertAnimation()
-//                        binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.black))
-//                    }
-//
-//                    is Resource.Error -> {
-//                        binding.buttonAddToCart.stopAnimation()
-//                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-//                    }
-//                    else -> Unit
-//                }
-//            }
-//        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.addToCart.collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        binding.buttonAddToCart.startAnimation()
+                    }
+
+                    is Resource.Success -> {
+                        binding.buttonAddToCart.revertAnimation()
+                        binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.black))
+                    }
+
+                    is Resource.Error -> {
+                        binding.buttonAddToCart.stopAnimation()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
 
         binding.apply {
             tvProductName.text = product.name
