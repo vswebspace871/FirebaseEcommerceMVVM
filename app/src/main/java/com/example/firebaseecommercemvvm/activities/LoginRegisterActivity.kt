@@ -79,6 +79,10 @@ class LoginRegisterActivity : AppCompatActivity() {
         }
 
     }*/
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }
 
 /*  private fun handleBackButtonPressed() {
